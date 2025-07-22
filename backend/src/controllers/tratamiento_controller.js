@@ -1,5 +1,6 @@
 import Tratamiento from "../models/Tratamiento.js"
 import mongoose from "mongoose"
+
 import { Stripe } from "stripe"
 const stripe = new Stripe(`${process.env.STRIPE_PRIVATE_KEY}`)
 
@@ -51,7 +52,6 @@ const pagarTratamiento = async (req, res) => {
             cliente = await stripe.customers.create({ name:tratamiento.nombrePropietario, email:tratamiento.emailPropietario });
         }
         
-
         const payment = await stripe.paymentIntents.create({
             amount:cantidad,
             currency: "USD",

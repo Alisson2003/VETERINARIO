@@ -1,6 +1,5 @@
 import { Router } from "express";
-import { eliminarTratamiento, listarTratamientos, registrarTratamiento,
-    pagarTratamiento } from "../controllers/tratamiento_controller.js";
+import { eliminarTratamiento, listarTratamientos, registrarTratamiento, pagarTratamiento } from "../controllers/tratamiento_controller.js";
 import { verificarTokenJWT } from '../middlewares/JWT.js'
 
 const router = Router()
